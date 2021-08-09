@@ -1,0 +1,87 @@
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.item {
+    position: relative;
+    background-color: $main-color;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        background-color: inherit;
+        left: 0;
+        transform: scale(2) translate(-75%, -75%) rotate(-28deg);
+        transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+        width: 100%;
+        height: 100%;
+        display: block;
+        opacity: 0.9;
+        transition-delay: 0.4s;
+    }
+    &:hover:after {
+        transform: scale(2) translate(0, 0) rotate(-28deg);
+    }
+    &:hover &-image {
+        transform: scale(1.2);
+    }
+    &:hover &-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &-image {
+        height: auto;
+        display: block;
+        transform: translateZ(0);
+        transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+    }
+    &-image:before {
+        content: "";
+        overflow: hidden;
+        display: block;
+        padding-top: 75%;
+    }
+    &-image img {
+        position: absolute;
+        height: auto;
+        width: 100%;
+        top: 0;
+        left: 0;
+        line-height: 0;
+    }
+    &-text {
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 1;
+        text-align: center;
+        transform: translateY(-20%);
+        transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+        transition-delay: 300ms;
+        color: $font-color;
+    }
+
+    &-text-wrap {
+        position: absolute;
+        top: 50%;
+        height: 100%;
+        transform: translateY(-50%);
+    }
+    &-text-title {
+        font-size: 2rem;
+        padding: 0 1rem;
+        margin: 5px 0 0 0;
+    }
+    &-text-category {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        opacity: 0.7;
+        margin: 0;
+    }
+}

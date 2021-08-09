@@ -1,0 +1,120 @@
+.container {
+  max-width: $website-width;
+  padding: 1rem 2rem;
+  margin: auto;
+  overflow: hidden;
+}
+//General Style for Buttons
+%btn-shared {
+    width: 170px;
+    height: 50px;
+    padding: 1rem .8rem;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    text-align: center;
+    font-size: 1rem;
+    cursor:pointer;
+  }
+
+.btn {
+  &-light {
+    @extend %btn-shared;
+    background-color: $light-color;
+    color: $dark-color;
+  }
+
+  &-main {
+    @extend %btn-shared;
+    background-color: $main-color;
+    color: $light-color;
+  }
+
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: $light-color;
+  }
+}
+
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: $main-color;
+}
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.text-center {
+  text-align: center;
+}
+
+//padding
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+
+//margin
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+//backgrounds
+.bg{
+
+  &-light{
+    background-color: $light-color;
+    color: $dark-color;
+  }
+ &-dark{
+    background-color: $dark-color;
+    color: $font-color;
+  }
+  &-main{
+    background-color: $main-color;
+    color: $dark-color;
+  }
+  &-medium{
+    background-color: $medium-color;
+    color: $dark-color;
+  }
+}
+
+//special classes
+.bottom-line {
+  width: 50px;
+  border-bottom: 0.2rem solid yellow;
+  margin: auto;
+  padding-top: 1rem;
+}
+.section-title {
+  font-size: 2.3rem;
+  font-weight: normal;
+  line-height: 1.1;
+  text-align: center;
+}
